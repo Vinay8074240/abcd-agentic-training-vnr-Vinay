@@ -11,7 +11,6 @@ def cosine_similarity(vec1, vec2):
     return dot_product / (magnitude1 * magnitude2)
 
 
-# Cosine search function
 def cosine_search(query_vector, data_vectors):
     similarities = []
     
@@ -19,12 +18,9 @@ def cosine_search(query_vector, data_vectors):
         score = cosine_similarity(query_vector, vec)
         similarities.append((idx, score))
     
-    # Sort by similarity (highest first)
     similarities.sort(key=lambda x: x[1], reverse=True)
     return similarities
 
-
-# Example vectors (could be embeddings)
 documents = [
     [1, 0, 1, 0],   # Doc 0
     [0, 1, 0, 1],   # Doc 1
@@ -34,10 +30,8 @@ documents = [
 
 query = [1, 0, 1, 1]
 
-# Perform cosine search
 results = cosine_search(query, documents)
 
-# Display results
 print("Cosine Search Results:")
 for doc_id, score in results:
     print(f"Document {doc_id} → Similarity: {score:.4f}")
