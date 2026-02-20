@@ -1,6 +1,5 @@
 import math
 
-# Function to compute cosine similarity
 def cosine_similarity(vec1, vec2):
     dot_product = sum(a * b for a, b in zip(vec1, vec2))
     magnitude1 = math.sqrt(sum(a * a for a in vec1))
